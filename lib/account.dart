@@ -65,30 +65,71 @@ class AccountPage extends StatelessWidget {
               leading: Icon(Icons.contact_phone),
               title: Text("Emergency Contacts"),
               trailing: Icon(Icons.arrow_forward_ios),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => EmergencyPage(),
+                  ),
+                );
+              },
             ),
 
             ListTile(
               leading: Icon(Icons.payment),
               title: Text("Payment Methods"),
               trailing: Icon(Icons.arrow_forward_ios),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PaymentPage(),
+                  ),
+                );
+              },
             ),
 
             ListTile(
               leading: Icon(Icons.notifications),
               title: Text("Notification Settings"),
               trailing: Icon(Icons.arrow_forward_ios),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NotificationPage(),
+                  ),
+                );
+              },
             ),
 
             ListTile(
               leading: Icon(Icons.help),
               title: Text("Help & Support"),
               trailing: Icon(Icons.arrow_forward_ios),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HelpPage(),
+                  ),
+                );
+              },
             ),
 
             ListTile(
               leading: Icon(Icons.info),
               title: Text("About"),
               trailing: Icon(Icons.arrow_forward_ios),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AboutPage(),
+                  ),
+                );
+              },
+
             ),
 
             Spacer(),
