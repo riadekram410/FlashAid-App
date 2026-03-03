@@ -61,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   Icon(
                     Icons.emergency,
                     size: 110,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                   SizedBox(height: 15),
                   Text(
