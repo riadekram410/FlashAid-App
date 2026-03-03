@@ -1,6 +1,6 @@
 {
-    "name": "ambulance",
-    "short_name": "ambulance",
+    "name": "servicepage",
+    "short_name": "servicepage",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
