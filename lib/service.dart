@@ -168,6 +168,7 @@ class ServicePage extends StatelessWidget {
   Widget spotlightCard(String title, String subtitle) {
     return Container(
       width: 180,
+      height:108,
       margin: EdgeInsets.only(left: 16),
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
@@ -196,13 +197,17 @@ class ServicePage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 5),
-          Text(
+          Expanded(
+            child: Text(
             subtitle,
             style: TextStyle(
               fontSize: 12,
               color: Colors.black54,
             ),
+            maxLines:2,
+            overflow: TextOverflow.ellipsis,
           ),
+    ),
         ],
       ),
     );
