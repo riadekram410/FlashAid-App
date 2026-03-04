@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'login_page.dart';
+import 'signup_page.dart';
 
 class WelcomePage extends StatelessWidget {
   @override
@@ -7,36 +8,31 @@ class WelcomePage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-
-          // Background Image
           Positioned.fill(
-            child: Image.asset(
-              'assets/bg.png',
-              fit: BoxFit.fill,
-            ),
+            child: Image.asset('assets/bg.png', fit: BoxFit.fill),
           ),
 
-
-          // Bottom Buttons
           Positioned(
             left: 20,
             right: 20,
-            bottom: 40,
+            bottom: 2,
             child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
 
-                // Login Button
+              children: [
                 SizedBox(
                   width: double.infinity,
                   height: 50,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
-                      foregroundColor: Colors.red,
+                      foregroundColor: Colors.red.shade700,
                     ),
                     onPressed: () {
-                      print("Login button pressed");
+
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage()),
+                      );
                     },
                     child: Text(
                       "Login",
@@ -50,20 +46,20 @@ class WelcomePage extends StatelessWidget {
 
                 SizedBox(height: 15),
 
-                // Sign Up Text
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       "Don’t have an Account? ",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 14,
-                      ),
+                      style: TextStyle(color: Colors.black, fontSize: 14),
                     ),
                     GestureDetector(
                       onTap: () {
-                        print("Sign Up pressed");
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignUpPage()),
+                        );
                       },
                       child: Text(
                         "Sign Up",
@@ -71,7 +67,6 @@ class WelcomePage extends StatelessWidget {
                           color: Colors.black,
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
-                          decoration: TextDecoration.underline,
                         ),
                       ),
                     ),

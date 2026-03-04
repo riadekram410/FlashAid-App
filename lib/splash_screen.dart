@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-import 'home_page.dart';
+import 'welcome_page.dart';
 import 'main.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,11 +16,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
-    super.initState();
+    super.initState();// calls parents class version
 
     // Start animation
-    Future.delayed(Duration(milliseconds: 100), () {
-      if (!mounted) return;
+    Timer(Duration(milliseconds: 100), () {
+
       setState(() {
         _opacity = 1;
         _scale = 1;
@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     // Navigate after 2 seconds
     Timer(Duration(seconds: 2), () {
-      if (!mounted) return;
+
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => WelcomePage()),
@@ -41,27 +41,26 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // THEME CHANGED: serious emergency medical (deep red)
-      backgroundColor: Color(0xFFB71C1C),
+
+      backgroundColor: Colors.red.shade900,
       body: Center(
         child: AnimatedOpacity(
           duration: Duration(milliseconds: 700),
           opacity: _opacity,
           child: AnimatedContainer(
-            duration: Duration(milliseconds: 1000),
+            duration: Duration(milliseconds: 1100),
             transform: Matrix4.translationValues(0, _position, 0),
             child: AnimatedScale(
-              duration: Duration(milliseconds: 1300),
-              //curve: Curves.fastOutSlowIn,
+              duration: Duration(milliseconds: 1500),
+              curve: Curves.fastOutSlowIn,
               scale: _scale,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // LOGO CHANGED: hospital / emergency icon
                   Icon(
                     Icons.emergency,
                     size: 110,
-                    color: Colors.black,
+                    color: Colors.white,
                   ),
                   SizedBox(height: 15),
                   Text(
